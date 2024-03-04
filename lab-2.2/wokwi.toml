@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = '../bin/lab-2.2.ino.hex'
+elf = '../bin/lab-2.2.ino.elf'
