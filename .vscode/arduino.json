@@ -1,0 +1,8 @@
+{
+  "board": "arduino:avr:uno",
+  "port": "/dev/ttyUSB0",
+  "sketch": "lab-2.2/lab-2.2.ino",
+  "programmer": "avrisp",
+  "prebuild": "rm -rf ./bin/",
+  "output": "./bin/"
+}
