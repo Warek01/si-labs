@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "author": "Alexandru Dobrojan",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-breadboard-half",
+      "id": "bb1",
+      "top": -377.4,
+      "left": 22,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": -76.2,
+      "left": 18.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -275.8,
+      "left": -144.6,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -348.8,
+      "left": 370.4,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -440.1,
+      "left": -176.9,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["ntc1:VCC", "bb1:bp.2", "red", ["h0"]],
+    ["bb1:bp.1", "uno:5V", "red", ["v325.5", "h122.6"]],
+    ["bb1:bp.25", "lcd1:VCC", "red", ["v0"]],
+    ["lcd1:GND", "bb1:bn.24", "black", ["h0"]],
+    ["ntc1:GND", "bb1:bn.3", "black", ["h0"]],
+    ["ntc1:OUT", "bb1:5b.i", "green", ["h0"]],
+    ["lcd1:SCL", "bb1:28b.f", "green", ["h0"]],
+    ["lcd1:SDA", "bb1:27b.f", "green", ["h0"]],
+    ["bb1:28b.j", "uno:A5", "green", ["v0"]],
+    ["bb1:27b.j", "uno:A4", "green", ["v76.8", "h19.2", "v268.8", "h-52.2"]],
+    ["uno:A0", "bb1:5b.j", "green", ["v-249.7", "h-140.2"]],
+    ["ultrasonic1:GND", "bb1:bn.5", "black", ["v48", "h171.6"]],
+    ["ultrasonic1:VCC", "bb1:bp.6", "red", ["v38.4", "h19.2"]],
+    ["ultrasonic1:TRIG", "bb1:9t.a", "yellow", ["v0"]],
+    ["ultrasonic1:ECHO", "bb1:11t.a", "cyan", ["h229.6", "v19.2"]],
+    ["bb1:9t.e", "uno:2", "yellow", ["v0"]],
+    ["bb1:11t.e", "uno:3", "cyan", ["v115.2", "h101.6"]]
+  ],
+  "dependencies": {}
+}
